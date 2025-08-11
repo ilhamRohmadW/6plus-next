@@ -1,0 +1,72 @@
+@import "tailwindcss"
+@custom-variant dark (&:where(.dark, .dark *));
+@theme
+  --color-primary: #FF3300;
+  --color-secondary: #FF6600;
+  --font-inter: "Inter", sans-serif;
+
+@layer components
+  img
+    object-fit: contain
+  .container
+    @apply relative max-w-screen-lg! mx-auto px-4
+  .section
+    @apply relative py-6 mb-4
+    &__title
+      @apply flex items-center justify-between gap-2 text-xl font-bold mb-5
+      &__text 
+        @apply flex gap-2 items-center
+        svg
+          @apply size-4 shrink-0
+      &__more
+        @apply flex gap-2 items-center text-sm font-normal hover:underline
+    &--row
+      @apply lg:flex lg:items-start lg:gap-8
+    &--aside
+      @apply lg:w-[300px] lg:shrink-0
+  .item
+    &__figure
+      @apply relative rounded-lg overflow-hidden mb-2.5 lg:mb-4
+      &__img
+        @apply w-full h-auto
+    &__time
+      @apply flex items-center gap-1 absolute bottom-1.5 right-1.5 rounded p-1.5 text-xs transition-opacity pointer-events-none
+      @apply group-hover:opacity-0
+    &__video
+      @apply absolute inset-0 -m-[5px] w-[calc(100%+10px)] h-[calc(100%+10px)] pointer-events-none
+    &__title
+      @apply font-semibold line-clamp-2 mb-1 text-sm
+    &__detail
+      @apply flex items-center gap-1 lg:gap-2 text-xs
+      &--story
+        .item
+          &__time
+            @apply group-hover:opacity-100 lg:group-hover:opacity-0
+          &__video
+            @apply -mx-6 w-[168px] z-30
+    &--row
+      @apply flex items-start gap-2.5
+      .item
+        &__figure
+          @apply w-44 shrink-0 mb-0
+          @apply lg:w-40
+        &__title
+          @apply line-clamp-3 leading-tight text-sm lg:mb-0.5
+        &__detail
+          @apply flex-col items-start lg:gap-0.5
+  .news-list
+    @apply relative grid grid-cols-2 lg:grid-cols-4 -m-2
+    .item
+      @apply block rounded-lg pt-2 px-2 pb-4
+    &-row
+      @apply flex flex-col gap-4 mt-5
+      @apply lg:mt-0
+  .topik-list
+    @apply flex items-center flex-wrap gap-3 text-sm
+    &__link
+      @apply px-4 py-2 rounded-full transition-colors w-full h-full block
+  .section--headline
+    background-size: 100% auto
+    @apply pt-0 pb-7 bg-cover mb-0
+    @apply lg:py-10
+    //  bg-size-[100%_auto]

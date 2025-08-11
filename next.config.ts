@@ -1,7 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  images: {
+    domains: ['preview-kly.akamaized.net'],
+  },
+  output: 'export',
 };
 
 export default nextConfig;

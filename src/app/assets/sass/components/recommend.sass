@@ -1,0 +1,7 @@
+@reference "tailwindcss"
+@custom-variant dark (&:where(.dark, .dark *));
+@layer components
+    .section--recomendation
+        @apply -mt-6 lg:mt-6 overflow-x-auto
+        &__wrapper
+            @apply p-4 -mx-4 lg:rounded-xl lg:p-10 lg:-mx-10
